@@ -5,8 +5,8 @@ const usersList = document.getElementById('users');
 
 const socket = io();
 socket.on('message', (message) => {
-  console.log(message);
   showMessage(message);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
 const { username, room } = Qs.parse(location.search, {
